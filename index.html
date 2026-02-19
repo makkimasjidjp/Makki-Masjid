@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home – Makki Masjid Tokyo</title>
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+<!-- ANNOUNCEMENT TICKER -->
+<div id="announcement-bar">
+  <div class="container-fluid px-3">
+    <div id="ticker-wrap">
+      <span id="ticker-inner">
+        📢 Jumu'ah: Khutbah 12:50 PM · Iqama 1:00 PM — Arrive early for seats &nbsp;|&nbsp;
+        🕌 All five daily prayers held in congregation &nbsp;|&nbsp;
+        📚 Makki Gakuin enrollment open — contact us for details &nbsp;|&nbsp;
+        🌙 Ramadan Taraweeh schedule coming soon
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="site-navbar navbar navbar-expand-lg">
+  <div class="container-xl">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="https://i0.wp.com/makkimasjid.jp/wp-content/uploads/2026/02/Logo-Makki-Masjid-Tokyo-trns.png?fit=100%2C100&ssl=1" alt="Makki Masjid Logo">
+      <div>
+        <div class="brand-text">Makki Masjid Tokyo</div>
+        <div class="brand-sub">A bridge of faith in Katsushika</div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 py-2 py-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about/index.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="prayer-times/index.html">Prayer Times</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Programs</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="programs/index.html">All Programs</a></li>
+            <li><a class="dropdown-item" href="programs/jumuah/index.html">Jumu'ah (Friday Prayer)</a></li>
+            <li><a class="dropdown-item" href="programs/lectures/index.html">Islamic Lectures</a></li>
+            <li><a class="dropdown-item" href="programs/ramadan/index.html">Ramadan Programs</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Gakuin</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="gakuin/index.html">About Makki Gakuin</a></li>
+            <li><a class="dropdown-item" href="gakuin/hifz/index.html">Hifz Division</a></li>
+            <li><a class="dropdown-item" href="gakuin/nazera/index.html">Nazera Division</a></li>
+            <li><a class="dropdown-item" href="gakuin/islamic-studies/index.html">Islamic Studies</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="services/index.html">All Services</a></li>
+            <li><a class="dropdown-item" href="services/shahada/index.html">Shahada</a></li>
+            <li><a class="dropdown-item" href="services/nikah/index.html">Nikah (Marriage)</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="gallery/index.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="album/index.html">Album</a></li>
+        <li class="nav-item"><a class="nav-link" href="visit/index.html">Visit</a></li>
+        <li class="nav-item"><a class="nav-link" href="announcements/index.html">Announcements</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact/index.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a class="nav-link btn-donate-nav" href="donate/index.html">Donate Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CLOCK BAR -->
+<div id="clock-bar">
+  <span><i class="bi bi-clock me-1"></i><span id="live-clock">--:--:--</span></span>
+  <span id="hijri-date-bar"><i class="bi bi-moon-stars me-1"></i><span>Loading…</span></span>
+</div>
+
+<!-- PRAYER BAR -->
+<div id="prayer-bar"></div>
+
+<!-- HERO -->
+<section style="background:linear-gradient(135deg,#124d30 0%,#1a5535 60%,#0e3322 100%);min-height:78vh;display:flex;align-items:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/svg%3E");"></div>
+  <div style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);font-size:26rem;color:rgba(255,255,255,.04);font-family:'Amiri',serif;pointer-events:none;line-height:1;">☽</div>
+  <div class="container py-5" style="position:relative;">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <p style="font-family:'Amiri',serif;font-size:1.8rem;color:rgba(255,255,255,.45);direction:rtl;" class="mb-1">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْم</p>
+        <h1 style="font-size:clamp(2rem,5vw,3.4rem);color:#fff;margin-top:.8rem;">Makki Masjid Tokyo</h1>
+        <p style="color:#f5e9c8;font-family:'Amiri',serif;font-size:1.2rem;">A bridge of faith in the heart of Katsushika.</p>
+        <p style="color:rgba(255,255,255,.7);max-width:520px;font-size:.97rem;" class="mb-4">A community mosque dedicated to serving the local Muslim ummah with prayer, Islamic learning, and community gatherings — a place of peace, worship, and spiritual growth.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="prayer-times/index.html" class="btn btn-warning fw-bold px-4 py-2" style="border-radius:5px;">Prayer Times</a>
+          <a href="visit/index.html" class="btn btn-outline-light px-4 py-2" style="border-radius:5px;">Visit Us</a>
+          <a href="donate/index.html" class="btn px-4 py-2 fw-bold" style="background:#c9a84c;color:#fff;border-radius:5px;">Donate</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="p-4 rounded-3" style="background:rgba(255,255,255,.08);backdrop-filter:blur(4px);">
+          <p class="mb-1 small" style="color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;">Next Prayer</p>
+          <h3 id="next-prayer-name" style="font-family:'Amiri',serif;font-size:2rem;color:#fff;margin-bottom:.2rem;">–</h3>
+          <p style="color:#f5e9c8;font-size:.9rem;" class="mb-3">Iqama at <strong id="next-prayer-iqama">–:–</strong></p>
+          <div class="d-flex gap-3">
+            <div class="cd-box"><span class="num" id="cd-h">00</span><span class="lbl">hrs</span></div>
+            <div class="cd-box"><span class="num" id="cd-m">00</span><span class="lbl">min</span></div>
+            <div class="cd-box"><span class="num" id="cd-s">00</span><span class="lbl">sec</span></div>
+          </div>
+          <hr style="border-color:rgba(255,255,255,.15);">
+          <div class="d-flex gap-3 flex-wrap">
+            <div>
+              <p class="mb-1 small" style="color:rgba(255,255,255,.55);">Next Jumu'ah</p>
+              <div class="d-flex gap-2">
+                <div class="cd-box"><span class="num" id="jc-d">–</span><span class="lbl">d</span></div>
+                <div class="cd-box"><span class="num" id="jc-h">–</span><span class="lbl">h</span></div>
+                <div class="cd-box"><span class="num" id="jc-m">–</span><span class="lbl">m</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section style="background:#fff;padding:2.5rem 0;">
+  <div class="container">
+    <div class="row g-3 text-center">
+      <div class="col-6 col-md-3">
+        <a href="prayer-times/index.html" class="d-block p-3 rounded-3 h-100 text-decoration-none" style="background:var(--green-light);transition:.2s;" onmouseover="this.style.background='#d0eadb'" onmouseout="this.style.background='var(--green-light)'">
+          <i class="bi bi-moon-stars-fill" style="font-size:2rem;color:var(--green);"></i>
+          <p class="fw-bold mt-2 mb-0 small" style="color:var(--green-dark);">Prayer Times</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="programs/jumuah/index.html" class="d-block p-3 rounded-3 h-100 text-decoration-none" style="background:var(--green-light);transition:.2s;" onmouseover="this.style.background='#d0eadb'" onmouseout="this.style.background='var(--green-light)'">
+          <i class="bi bi-people-fill" style="font-size:2rem;color:var(--green);"></i>
+          <p class="fw-bold mt-2 mb-0 small" style="color:var(--green-dark);">Jumu'ah</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="gakuin/index.html" class="d-block p-3 rounded-3 h-100 text-decoration-none" style="background:var(--green-light);transition:.2s;" onmouseover="this.style.background='#d0eadb'" onmouseout="this.style.background='var(--green-light)'">
+          <i class="bi bi-mortarboard-fill" style="font-size:2rem;color:var(--green);"></i>
+          <p class="fw-bold mt-2 mb-0 small" style="color:var(--green-dark);">Makki Gakuin</p>
+        </a>
+      </div>
+      <div class="col-6 col-md-3">
+        <a href="donate/index.html" class="d-block p-3 rounded-3 h-100 text-decoration-none" style="background:var(--gold-light);transition:.2s;" onmouseover="this.style.background='#edd89e'" onmouseout="this.style.background='var(--gold-light)'">
+          <i class="bi bi-gift-fill" style="font-size:2rem;color:var(--gold);"></i>
+          <p class="fw-bold mt-2 mb-0 small" style="color:#7a5c10;">Donate Now</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section style="background:var(--green-light);">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-6">
+        <h2 class="section-title">Welcome to <span>Makki Masjid</span></h2>
+        <div class="section-divider"></div>
+        <p>Makki Masjid Tokyo is a community-based mosque in Katsushika City dedicated to serving the spiritual and social needs of Muslims in Tokyo. We strive to strengthen faith, build community bonds, and offer a welcoming place for worship and learning.</p>
+        <ul class="check-list mt-3">
+          <li><i class="bi bi-check-circle-fill"></i> Five daily prayers in congregation</li>
+          <li><i class="bi bi-check-circle-fill"></i> Friday (Jumu'ah) prayer every week</li>
+          <li><i class="bi bi-check-circle-fill"></i> Islamic lectures and community gatherings</li>
+          <li><i class="bi bi-check-circle-fill"></i> Islamic education through Makki Gakuin</li>
+          <li><i class="bi bi-check-circle-fill"></i> Open to all Muslims in Tokyo and visitors</li>
+        </ul>
+        <a href="about/index.html" class="btn btn-success mt-3" style="background:var(--green);border:none;">Learn More About Us →</a>
+      </div>
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-6"><div class="card-masjid p-4 text-center" style="background:#fff;"><i class="bi bi-geo-alt-fill" style="font-size:2rem;color:var(--green);"></i><p class="fw-bold mt-2 mb-1 small">Address</p><p class="text-muted small mb-0">5-22-14 Yotsugi, Katsushika-ku, Tokyo 124-0011</p></div></div>
+          <div class="col-6"><div class="card-masjid p-4 text-center" style="background:#fff;"><i class="bi bi-train-front" style="font-size:2rem;color:var(--green);"></i><p class="fw-bold mt-2 mb-1 small">Access</p><p class="text-muted small mb-0">11-min walk from Ohanajaya Station (Keisei Line)</p></div></div>
+          <div class="col-6"><div class="card-masjid p-4 text-center" style="background:#fff;"><i class="bi bi-telephone-fill" style="font-size:2rem;color:var(--green);"></i><p class="fw-bold mt-2 mb-1 small">Phone</p><p class="text-muted small mb-0">+81-3-5670-7426</p></div></div>
+          <div class="col-6"><div class="card-masjid p-4 text-center" style="background:#fff;"><i class="bi bi-clock-fill" style="font-size:2rem;color:var(--green);"></i><p class="fw-bold mt-2 mb-1 small">Open</p><p class="text-muted small mb-0">Daily for all five prayers</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section style="background:#fff;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-block">
+          <div class="card-icon"><i class="bi bi-star-fill"></i></div>
+          <h5 style="font-family:'Amiri',serif;">Shahada</h5>
+          <p class="text-muted small">Support, guidance, and certificates for those taking the testimony of faith.</p>
+          <a href="services/shahada/index.html" class="small" style="color:var(--green);">Learn more →</a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-block">
+          <div class="card-icon"><i class="bi bi-heart-fill"></i></div>
+          <h5 style="font-family:'Amiri',serif;">Nikah</h5>
+          <p class="text-muted small">Islamic marriage facilitation and guidance according to Shariah principles.</p>
+          <a href="services/nikah/index.html" class="small" style="color:var(--green);">Learn more →</a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-block">
+          <div class="card-icon"><i class="bi bi-book-fill"></i></div>
+          <h5 style="font-family:'Amiri',serif;">Islamic Classes</h5>
+          <p class="text-muted small">Regular Dars covering Quran, Hadith, Fiqh, and Islamic studies for all ages.</p>
+          <a href="services/index.html" class="small" style="color:var(--green);">Learn more →</a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="service-block">
+          <div class="card-icon"><i class="bi bi-chat-heart-fill"></i></div>
+          <h5 style="font-family:'Amiri',serif;">Community</h5>
+          <p class="text-muted small">Counseling, guidance, and community welfare services for Muslims in need.</p>
+          <a href="services/index.html" class="small" style="color:var(--green);">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERSE OF THE DAY + DHIKR -->
+<section style="background:var(--green-light);">
+  <div class="container">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-7">
+        <div class="h-100 p-4 p-md-5 rounded-3 text-center" style="background:#fff;box-shadow:var(--shadow);">
+          <p class="small text-uppercase fw-bold" style="color:var(--green);letter-spacing:.1em;">Verse of the Day</p>
+          <p class="dhikr-arabic" style="font-size:2rem;">إِنَّ مَعَ الْعُسْرِ يُسْرًا</p>
+          <p style="font-style:italic;color:var(--muted);">Inna maʿal-ʿusri yusrā</p>
+          <p class="fw-bold">"Indeed, with hardship comes ease."</p>
+          <p class="text-muted small">— Surah Ash-Sharh (94:6)</p>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="h-100 p-4 rounded-3 text-center" style="background:var(--green-dark);color:#fff;box-shadow:var(--shadow);">
+          <p class="small text-uppercase fw-bold" style="color:var(--gold-light);letter-spacing:.1em;">Daily Dhikr Counter</p>
+          <div class="dhikr-arabic" id="dhikr-arabic" style="color:var(--gold-light);">سُبْحَانَ اللّٰه</div>
+          <div style="font-style:italic;color:rgba(255,255,255,.7);font-size:.9rem;" id="dhikr-trans">Subḥān Allāh</div>
+          <div style="color:rgba(255,255,255,.8);font-size:.85rem;" id="dhikr-meaning">"Glory be to God"</div>
+          <div class="dhikr-btn" id="dhikr-btn"><span id="dhikr-count">0</span></div>
+          <div style="color:rgba(255,255,255,.55);font-size:.78rem;" id="dhikr-target">0 / 33</div>
+          <div class="d-flex justify-content-center gap-2 mt-3 flex-wrap">
+            <button class="btn btn-sm btn-outline-light" onclick="dhikrNext(-1)">◀ Prev</button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="dhikrReset()">Reset</button>
+            <button class="btn btn-sm btn-outline-light" onclick="dhikrNext(1)">Next ▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY PREVIEW -->
+<section style="background:var(--green-dark);">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+      <div>
+        <h2 class="section-title mb-1" style="color:#fff;">Photo <span>Gallery</span></h2>
+        <div class="section-divider"></div>
+      </div>
+      <a href="gallery/index.html" class="btn btn-outline-light btn-sm">View All Photos →</a>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-3"><div class="gallery-item" data-lightbox="https://makkimasjid.jp/wp-content/uploads/2026/02/photo1.png"><img src="https://makkimasjid.jp/wp-content/uploads/2026/02/photo1.png" alt="Masjid Photo 1" loading="lazy"><div class="overlay"><i class="bi bi-zoom-in"></i></div></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="gallery-item" data-lightbox="https://makkimasjid.jp/wp-content/uploads/2026/02/photo2.png"><img src="https://makkimasjid.jp/wp-content/uploads/2026/02/photo2.png" alt="Masjid Photo 2" loading="lazy"><div class="overlay"><i class="bi bi-zoom-in"></i></div></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="gallery-item" data-lightbox="https://makkimasjid.jp/wp-content/uploads/2026/02/photo3.png"><img src="https://makkimasjid.jp/wp-content/uploads/2026/02/photo3.png" alt="Masjid Photo 3" loading="lazy"><div class="overlay"><i class="bi bi-zoom-in"></i></div></div></div>
+      <div class="col-6 col-md-4 col-lg-3"><div class="gallery-item" data-lightbox="https://makkimasjid.jp/wp-content/uploads/2026/02/photo4.png"><img src="https://makkimasjid.jp/wp-content/uploads/2026/02/photo4.png" alt="Masjid Photo 4" loading="lazy"><div class="overlay"><i class="bi bi-zoom-in"></i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE CTA -->
+<section class="donate-section py-5">
+  <div class="container">
+    <p style="font-family:'Amiri',serif;font-size:1.5rem;color:var(--gold-light);" class="mb-2">صَدَقَةٌ جَارِيَة — Ongoing Charity</p>
+    <h2 style="color:#fff;" class="mb-3">Support Your Masjid</h2>
+    <p style="color:rgba(255,255,255,.75);max-width:540px;margin:0 auto 2rem;">"Whoever builds a masjid for Allah, Allah will build for him a house in Paradise." — Prophet Muhammad ﷺ</p>
+    <a href="donate/index.html" class="btn btn-warning fw-bold px-5 py-3" style="border-radius:6px;font-size:1.05rem;">Donate Now — بَارَكَ اللّٰهُ فِيكُم</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <img src="https://i0.wp.com/makkimasjid.jp/wp-content/uploads/2026/02/Logo-Makki-Masjid-Tokyo-trns.png?fit=60%2C60&ssl=1" height="44" alt="Logo">
+          <div>
+            <div style="font-family:'Amiri',serif;color:#fff;font-size:1rem;">Makki Masjid Tokyo</div>
+            <div style="font-size:.72rem;color:var(--gold-light);">A bridge of faith in Katsushika</div>
+          </div>
+        </div>
+        <p class="small">A community mosque serving the Muslim ummah in Tokyo with prayer, learning, and community support.</p>
+        <a href="#" class="social-btn"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-btn"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="bi bi-twitter-x"></i></a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Pages</h6>
+        <ul class="list-unstyled small">
+          <li><a href="about/index.html">About Us</a></li>
+          <li><a href="prayer-times/index.html">Prayer Times</a></li>
+          <li><a href="programs/index.html">Programs</a></li>
+          <li><a href="gakuin/index.html">Makki Gakuin</a></li>
+          <li><a href="gallery/index.html">Gallery</a></li>
+          <li><a href="album/index.html">Album</a></li>
+          <li><a href="visit/index.html">Visit &amp; Etiquette</a></li>
+          <li><a href="contact/index.html">Contact</a></li>
+          <li><a href="donate/index.html">Donate</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6>Services</h6>
+        <ul class="list-unstyled small">
+          <li>Five Daily Prayers</li>
+          <li>Jumu'ah (Friday Prayer)</li>
+          <li><a href="services/shahada/index.html">Shahada Support</a></li>
+          <li><a href="services/nikah/index.html">Nikah (Marriage)</a></li>
+          <li>Islamic Classes &amp; Dars</li>
+          <li>Community Counseling</li>
+          <li>Tablighi Jamaat Support</li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h6>Contact</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-1"><i class="bi bi-geo-alt me-2"></i>5-22-14 Yotsugi, Katsushika-ku, Tokyo 124-0011</li>
+          <li class="mb-1"><i class="bi bi-telephone me-2"></i><a href="tel:+81356707426">+81-3-5670-7426</a></li>
+          <li class="mb-1"><i class="bi bi-globe me-2"></i><a href="https://makkimasjid.jp" target="_blank">makkimasjid.jp</a></li>
+        </ul>
+        <p style="font-family:'Amiri',serif;font-size:1.2rem;color:var(--gold-light);" class="mt-2">جَزَاكُمُ اللّٰهُ خَيْرًا</p>
+      </div>
+    </div>
+    <div class="footer-divider text-center">
+      © <span id="footer-year"></span> Makki Masjid Tokyo. All rights reserved. &nbsp;|&nbsp;
+      〒124-0011 東京都葛飾区四つ木５丁目２２−１４
+    </div>
+  </div>
+</footer>
+
+<!-- Lightbox Modal -->
+<div class="modal fade" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content bg-dark border-0">
+      <div class="modal-header border-0 pb-0">
+        <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center p-2 p-md-4">
+        <img id="lb-img" src="" alt="" style="max-width:100%;max-height:80vh;object-fit:contain;border-radius:6px;">
+        <p id="lb-caption" class="text-white-50 small mt-2 mb-0"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scroll to top -->
+<div id="scroll-top"><i class="bi bi-arrow-up"></i></div>
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Site JS -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
